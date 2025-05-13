@@ -83,7 +83,7 @@ k8s-hands-on/
 └── README.md                  # Project overview and navigation
 ````
 
-### Kubernetes Core Objects (in order of complexity)
+## ☸️ Kubernetes Core Objects (in order of complexity)
 
 | Level | Kubernetes Object                           |
 | ----- | ------------------------------------------- |
@@ -97,3 +97,87 @@ k8s-hands-on/
 | 8️⃣    | Ingress                                     |
 | 9️⃣    | NetworkPolicy                               |
 | 🔟    | RBAC (Role, RoleBinding, etc)               |
+
+## 🚀 Stateless Application Deployment
+
+You'll start with deploying a simple stateless app like **nginx** or a basic **Node.js** app:
+
+- ✅ Create **Pod** and expose it with a **Service**
+- ✅ Scale using a **ReplicaSet** or **Deployment**
+- ✅ Add **ConfigMap** for environment configuration
+- ✅ Add health checks using `livenessProbe` and `readinessProbe`
+
+---
+
+## 💾 Stateful Application Deployment
+
+Move on to deploying a stateful app like **PostgreSQL** or **MongoDB**:
+
+- ✅ Define **PersistentVolumeClaim (PVC)** and **StorageClass**
+- ✅ Use a **StatefulSet** instead of a Deployment
+- ✅ Configure **headless Services** for stable network identity
+- ✅ Understand how **volumeClaimTemplates** enable per-pod storage
+
+---
+
+## 💽 Storage & Persistent Volumes
+
+Deep dive into storage management:
+
+- ✅ Manual **PersistentVolume (PV)** and **PVC** setup
+- ✅ **Dynamic provisioning** with StorageClasses
+- ✅ Understand access modes:
+  - `ReadWriteOnce`
+  - `ReadOnlyMany`
+  - `ReadWriteMany`
+
+---
+
+## 🔐 RBAC, Secrets & ConfigMaps
+
+Security and configuration management:
+
+- ✅ Create **Roles**, **RoleBindings**, and **ServiceAccounts**
+- ✅ Inject **Secrets** into Pods via environment variables or volumes
+- ✅ Secure your cluster from common misconfigurations
+
+---
+
+## 🌐 Networking & Policies
+
+Explore Kubernetes networking:
+
+- ✅ Cluster networking concepts (CNI, `kube-proxy`)
+- ✅ Apply **NetworkPolicy** to restrict pod communication
+- ✅ Expose apps using **Ingress Controllers** with **TLS**
+- ✅ Internal **DNS resolution** for service discovery
+
+---
+
+## 📈 Monitoring, Logging & Probes
+
+Gain observability into your cluster:
+
+- ✅ Set up **Prometheus** and **Grafana**
+- ✅ Use `kubectl logs`, `kubectl top`, and **metrics-server**
+- ✅ Configure `readinessProbe`, `livenessProbe`, and `startupProbe`
+
+---
+
+## 🛠️ Helm, CI/CD & Final Project
+
+Prepare for production:
+
+- ✅ Package and deploy apps using **Helm**
+- ✅ Implement **CI/CD pipelines** with GitHub Actions or Jenkins
+- ✅ Deploy a **full-stack sample application** (frontend + backend + database)
+
+---
+
+## 🧪 Testing & Exam Practice
+
+Each hands-on section includes:
+
+- 🎯 Mini tasks and challenges
+- 🧩 Bonus exercises inspired by the **CKA exam**
+- 📝 YAML manifest files for repeated practice
