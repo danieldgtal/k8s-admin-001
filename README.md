@@ -45,25 +45,55 @@ We’ll use Google Cloud Compute Engine to provision raw Linux VMs and install K
 
 ### 🧱 Infrastructure Plan
 
-| Component       | Count | Description                           |
-|----------------|-------|---------------------------------------|
-| Master Node     | 1     | Runs control plane components         |
-| Worker Nodes    | 2+    | Run your actual application pods      |
-| OS              | Ubuntu 22.04 LTS                             |
-| Networking      | Calico (for network policies)                |
-| Container Runtime | containerd                                 |
+| Component         | Count                         | Description                      |
+| ----------------- | ----------------------------- | -------------------------------- |
+| Master Node       | 1                             | Runs control plane components    |
+| Worker Nodes      | 2+                            | Run your actual application pods |
+| OS                | Ubuntu 22.04 LTS              |
+| Networking        | Calico (for network policies) |
+| Container Runtime | containerd                    |
 
 ### 📜 Cluster Setup Guide
 
-```bash
+````bash
+## Cluster Setup guide is in setup directory
 # Create a VM instance template (Ubuntu 22.04, 2vCPU, 4GB RAM)
-gcloud compute instances create k8s-master \
-  --zone=us-central1-a \
-  --machine-type=e2-medium \
-  --image-family=ubuntu-2204-lts \
-  --image-project=ubuntu-os-cloud \
-  --boot-disk-size=20GB \
-  --tags=k8s
+
 
 # Repeat for worker nodes (k8s-worker-1, k8s-worker-2, etc.)
 
+
+
+## 🗂️ Project Directory Structure
+
+```bash
+k8s-hands-on/
+├── cluster-setup/             # Manual cluster provisioning (kubeadm on GCP)
+├── 01-pods/                   # Basic pod definitions and practice
+├── 02-replicasets/            # ReplicaSet usage and configuration
+├── 03-deployments/            # Stateless app deployments with rolling updates
+├── 04-services/               # ClusterIP, NodePort, LoadBalancer services
+├── 05-configmaps-secrets/     # Externalize configuration and sensitive data
+├── 06-statefulsets/           # Deploy and manage stateful apps
+├── 07-storage/                # Persistent Volumes, PVCs, and StorageClasses
+├── 08-networking/             # Ingress, DNS, and Network Policies
+├── 09-rbac/                   # Roles, RoleBindings, ServiceAccounts
+├── 10-monitoring/             # Probes, metrics, logging and observability
+├── 11-final-project/          # Final full-stack application deployment
+└── README.md                  # Project overview and navigation
+````
+
+### Kubernetes Core Objects (in order of complexity)
+
+| Level | Kubernetes Object                           |
+| ----- | ------------------------------------------- |
+| 1️⃣    | Pod                                         |
+| 2️⃣    | ReplicaSet                                  |
+| 3️⃣    | Deployment                                  |
+| 4️⃣    | Service (ClusterIP, NodePort, LoadBalancer) |
+| 5️⃣    | ConfigMap & Secret                          |
+| 6️⃣    | Job & CronJob                               |
+| 7️⃣    | StatefulSet & PVC                           |
+| 8️⃣    | Ingress                                     |
+| 9️⃣    | NetworkPolicy                               |
+| 🔟    | RBAC (Role, RoleBinding, etc)               |
