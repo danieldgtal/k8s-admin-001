@@ -1,0 +1,13 @@
+#Run the below command on the master node.
+# This will install the CNI Plugin(Flannel)
+## Step 5
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+
+## Step 6 Join Worker Nodes to the Cluster
+# The kubeadm init command in step 4 will output a join command. Run this command with sudo on each worker node
+# Example (your token and hash will be different)
+sudo kubeadm join 10.128.0.10:6443 --token abcdef.0123456789abcdef \
+  --discovery-token-ca-cert-hash sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+
+## Step 7 Verify Cluster Status
+kubectl get nodes
