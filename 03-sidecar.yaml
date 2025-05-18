@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-monitoring
+  namespace: k8s-demo
+  labels:
+    app: web-monitoring
+spec:
+  containers:
+    - name: web-app
+      image: nginx:1.21
+      volumeMounts:
+        - name: shared-logs
+          mountPath: /var/log/nginx
+
+    - name: log-collector
+      image: busybox
+      command: ["sh", "-c", "tail -f /var/log/nginx/access.log"]
+      volumeMounts:
+        - name: shared-logs
+          mountPath: /var/log/nginx
+
+  volumes:
+    - name: shared-logs
+      emptyDir: {}
