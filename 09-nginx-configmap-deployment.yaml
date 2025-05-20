@@ -1,3 +1,5 @@
+# Nginx Deployment with ConfigMap
+# This YAML file demonstrates how to create a Kubernetes Deployment that uses a ConfigMap.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
