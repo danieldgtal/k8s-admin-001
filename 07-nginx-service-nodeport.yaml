@@ -1,3 +1,5 @@
+# Service of type NodePort
+# This YAML file demonstrates how to create a Kubernetes Service of type NodePort.
 apiVersion: v1
 kind: Service
 metadata:
