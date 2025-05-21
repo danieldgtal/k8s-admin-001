@@ -1,3 +1,7 @@
+# ConfigMap for Nginx
+# This YAML file demonstrates how to create a ConfigMap that contains custom Nginx configuration and an HTML file.
+# The ConfigMap is then used in a Deployment to configure the Nginx server.
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
