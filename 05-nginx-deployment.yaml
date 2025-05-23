@@ -1,3 +1,7 @@
+# This file contains an nginx Deployment example with resource requests and limits,
+# readiness and liveness probes, and a rolling update strategy.
+# It creates a Deployment with 3 replicas of nginx, each with resource requests and limits,
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
