@@ -1,3 +1,5 @@
+# nginx-replicaset.yaml
+# This YAML file demonstrates how to create a Kubernetes ReplicaSet for an Nginx application.
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
