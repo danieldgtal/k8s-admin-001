@@ -1,3 +1,5 @@
+# This YAML file defines a Kubernetes Pod with a sidecar container for monitoring web application logs.
+# The main container runs an Nginx web server, while the sidecar container collects logs from the Nginx access log file.
 apiVersion: v1
 kind: Pod
 metadata:
