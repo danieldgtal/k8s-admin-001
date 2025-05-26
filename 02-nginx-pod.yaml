@@ -1,3 +1,5 @@
+# Nginx Pod Configuration
+# This YAML file defines a Kubernetes Pod that runs an Nginx web server.
 apiVersion: v1
 kind: Pod
 metadata:
