@@ -1,3 +1,5 @@
+# Namespace configuration for Kubernetes demo
+
 apiVersion: v1
 kind: Namespace
 metadata:
